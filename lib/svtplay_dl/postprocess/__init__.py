@@ -158,8 +158,9 @@ class postprocess(object):
 
         tempfile = u"{0}.temp".format(orig_filename)
         name = os.path.splitext(orig_filename)[0]
+
         audio_filename = u"{0}.m4a".format(name)
-        arguments = ["-c:v", "copy", "-c:a", "copy", "-f", "mp4"]
+        arguments = ["-vcodec", "copy", "-acodec", "copy", "-f", "mp4"]
         cmd = [self.detect, "-i", orig_filename, "-i", audio_filename]
 
         if self.merge_subtitle:
