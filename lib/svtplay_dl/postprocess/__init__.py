@@ -153,7 +153,7 @@ class postprocess(object):
         tempfile = "{}.temp".format(orig_filename)
         name = os.path.splitext(orig_filename)[0]
 
-        audio_filename = u"{0}.m4a".format(name)
+        audio_filename = "{}.m4a".format(name)
         arguments = ["-vcodec", "copy", "-acodec", "copy", "-f", "mp4"]
         cmd = [self.detect, "-i", orig_filename, "-i", audio_filename]
 
